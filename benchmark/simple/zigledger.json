@@ -34,24 +34,6 @@
           "events": "grpcs://localhost:7059",
           "server-hostname": "peer1.org1.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt"
-        },
-        "peer3": {
-          "requests": "grpcs://localhost:7063",
-          "events": "grpcs://localhost:7065",
-          "server-hostname": "peer2.org1.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/tls/ca.crt"
-        },
-        "peer4": {
-          "requests": "grpcs://localhost:7069",
-          "events": "grpcs://localhost:7071",
-          "server-hostname": "peer3.org1.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer3.org1.example.com/tls/ca.crt"
-        },
-        "peer5": {
-          "requests": "grpcs://localhost:7075",
-          "events": "grpcs://localhost:7077",
-          "server-hostname": "peer4.org1.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer4.org1.example.com/tls/ca.crt"
         }
       },
       "org2": {
@@ -72,24 +54,6 @@
           "events": "grpcs://localhost:8059",
           "server-hostname": "peer1.org2.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt"
-        },
-        "peer3": {
-          "requests": "grpcs://localhost:8063",
-          "events": "grpcs://localhost:8065",
-          "server-hostname": "peer2.org2.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer2.org2.example.com/tls/ca.crt"
-        },
-        "peer4": {
-          "requests": "grpcs://localhost:8069",
-          "events": "grpcs://localhost:8071",
-          "server-hostname": "peer3.org2.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer3.org2.example.com/tls/ca.crt"
-        },
-        "peer5": {
-          "requests": "grpcs://localhost:8075",
-          "events": "grpcs://localhost:8077",
-          "server-hostname": "peer4.org2.example.com",
-          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer4.org2.example.com/tls/ca.crt"
         }
       }
     },
