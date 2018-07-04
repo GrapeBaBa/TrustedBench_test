@@ -6,7 +6,7 @@
         "url": "grpcs://localhost:7050",
         "mspid": "OrdererMSP",
         "user": {
-          "key": "network/zigledger/simplenetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/be595291403ff68280a724d7e868521815ad9e2fc8c5486f6d7ce6b62d6357cd_sk",
+          "key": "network/zigledger/simplenetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/afed7fbe4558fe5fdd7ef67c05ee488499098c3852fbc434a2cb1c8b5f99e36b_sk",
           "cert": "network/zigledger/simplenetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
         },
         "server-hostname": "orderer.example.com",
@@ -16,7 +16,7 @@
         "name": "peerOrg1",
         "mspid": "Org1MSP",
         "user": {
-          "key": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/0d2b2fc385b10fa59003217e1bb5af2d24a3d762266e287867a1bc290eb44657_sk",
+          "key": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/eaa7fa211aa5a1eb5a2214e68f15cebf841ae21bab9810312eeb0ed6f0477612_sk",
           "cert": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
         },
         "ca": {
@@ -34,6 +34,24 @@
           "events": "grpcs://localhost:7059",
           "server-hostname": "peer1.org1.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt"
+        },
+        "peer3": {
+          "requests": "grpcs://localhost:7063",
+          "events": "grpcs://localhost:7065",
+          "server-hostname": "peer2.org1.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/tls/ca.crt"
+        },
+        "peer4": {
+          "requests": "grpcs://localhost:7069",
+          "events": "grpcs://localhost:7071",
+          "server-hostname": "peer3.org1.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer3.org1.example.com/tls/ca.crt"
+        },
+        "peer5": {
+          "requests": "grpcs://localhost:7075",
+          "events": "grpcs://localhost:7077",
+          "server-hostname": "peer4.org1.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer4.org1.example.com/tls/ca.crt"
         }
       },
       "org2": {
@@ -54,6 +72,24 @@
           "events": "grpcs://localhost:8059",
           "server-hostname": "peer1.org2.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt"
+        },
+        "peer3": {
+          "requests": "grpcs://localhost:8063",
+          "events": "grpcs://localhost:8065",
+          "server-hostname": "peer2.org2.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer2.org2.example.com/tls/ca.crt"
+        },
+        "peer4": {
+          "requests": "grpcs://localhost:8069",
+          "events": "grpcs://localhost:8071",
+          "server-hostname": "peer3.org2.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer3.org2.example.com/tls/ca.crt"
+        },
+        "peer5": {
+          "requests": "grpcs://localhost:8075",
+          "events": "grpcs://localhost:8077",
+          "server-hostname": "peer4.org2.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer4.org2.example.com/tls/ca.crt"
         }
       }
     },
@@ -87,7 +123,7 @@
           }
         }
       ],
-      "policy": { "1-of": [{"signed-by": 0}, {"signed-by": 1}]}
+      "policy": { "2-of": [{"signed-by": 0}, {"signed-by": 1}]}
     },
     "context": {
       "open": "mychannel",

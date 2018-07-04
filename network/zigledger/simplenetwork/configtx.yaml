@@ -75,8 +75,8 @@ Organizations:
             # encoded in the genesis block in the Application section context
             - Host: peer0.org1.example.com
               Port: 7051
-            - Host: peer1.org1.example.com
-              Port: 7051
+#            - Host: peer1.org1.example.com
+#              Port: 7051
 
     - &Org1
         # DefaultOrg defines the organization which is used in the sampleconfig
@@ -96,8 +96,8 @@ Organizations:
             # encoded in the genesis block in the Application section context
             - Host: peer0.org2.example.com
               Port: 7051
-            - Host: peer1.org2.example.com
-              Port: 7051
+#            - Host: peer1.org2.example.com
+#              Port: 7051
 
 ################################################################################
 #
@@ -123,11 +123,11 @@ Orderer: &OrdererDefaults
     BatchSize:
 
         # Max Message Count: The maximum number of messages to permit in a batch
-        MaxMessageCount: 500
+        MaxMessageCount: 100
 
         # Absolute Max Bytes: The absolute maximum number of bytes allowed for
         # the serialized messages in a batch.
-        AbsoluteMaxBytes: 999 MB
+        AbsoluteMaxBytes: 98 MB
 
         # Preferred Max Bytes: The preferred maximum number of bytes allowed for
         # the serialized messages in a batch. A message larger than the preferred
