@@ -34,6 +34,12 @@
           "events": "grpcs://localhost:7059",
           "server-hostname": "peer1.org1.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt"
+        },
+        "peer3": {
+          "requests": "grpcs://localhost:7063",
+          "events": "grpcs://localhost:7065",
+          "server-hostname": "peer2.org1.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org1.example.com/peers/peer2.org1.example.com/tls/ca.crt"
         }
       },
       "org2": {
@@ -54,6 +60,12 @@
           "events": "grpcs://localhost:8059",
           "server-hostname": "peer1.org2.example.com",
           "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt"
+        },
+        "peer3": {
+          "requests": "grpcs://localhost:8063",
+          "events": "grpcs://localhost:8065",
+          "server-hostname": "peer2.org2.example.com",
+          "tls_cacerts": "network/zigledger/simplenetwork/crypto-config/peerOrganizations/org2.example.com/peers/peer2.org2.example.com/tls/ca.crt"
         }
       }
     },
@@ -87,7 +99,7 @@
           }
         }
       ],
-      "policy": { "2-of": [{"signed-by": 0}, {"signed-by": 1}]}
+      "policy": { "1-of": [{"signed-by": 0}, {"signed-by": 1}]}
     },
     "context": {
       "open": "mychannel",
