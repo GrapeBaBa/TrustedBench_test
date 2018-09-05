@@ -2,21 +2,33 @@
   "zigledger": {
     "cryptodir": "network/zigledger/multiplehostsnetwork/crypto-config",
     "network": {
-      "orderer": {
-        "url": "grpcs://192.168.0.30:7050",
-        "mspid": "OrdererMSP",
-        "user": {
-          "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/be595291403ff68280a724d7e868521815ad9e2fc8c5486f6d7ce6b62d6357cd_sk",
-          "cert": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
+      "orderer": [
+        {
+          "url": "grpcs://192.168.0.30:7050",
+          "mspid": "OrdererMSP",
+          "user": {
+            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/c25aa3879de745eac345bc9c77c52338150f3139ac216046b4483100dfa2d8e2_sk",
+            "cert": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
+          },
+          "server-hostname": "orderer.example.com",
+          "tls_cacerts": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/tls/ca.crt"
         },
-        "server-hostname": "orderer.example.com",
-        "tls_cacerts": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt"
-      },
+        {
+          "url": "grpcs://192.168.0.31:7050",
+          "mspid": "OrdererMSP",
+          "user": {
+            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/c25aa3879de745eac345bc9c77c52338150f3139ac216046b4483100dfa2d8e2_sk",
+            "cert": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
+          },
+          "server-hostname": "orderer.example.com",
+          "tls_cacerts": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/orderers/orderer1.example.com/tls/ca.crt"
+        }
+      ],
       "org1": {
         "name": "peerOrg1",
         "mspid": "Org1MSP",
         "user": {
-          "key": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/0d2b2fc385b10fa59003217e1bb5af2d24a3d762266e287867a1bc290eb44657_sk",
+          "key": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/a48bd547bd2a822ba58b33bc4948020a43642782e5480e61be394077a0615287_sk",
           "cert": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
         },
         "ca": {
@@ -61,11 +73,22 @@
       {
         "name": "mychannel",
         "config": "network/zigledger/multiplehostsnetwork/mychannel.tx",
-        "organizations": ["org1", "org2"],
+        "organizations": [
+          "org1",
+          "org2"
+        ],
         "deployed": true
       }
     ],
-    "chaincodes": [{"id": "simple", "path": "contract/zigledger/simple", "language":"golang", "version": "v0", "channel": "mychannel"}],
+    "chaincodes": [
+      {
+        "id": "simple",
+        "path": "contract/zigledger/simple",
+        "language": "golang",
+        "version": "v0",
+        "channel": "mychannel"
+      }
+    ],
     "endorsement-policy": {
       "identities": [
         {
@@ -87,7 +110,16 @@
           }
         }
       ],
-      "policy": { "1-of": [{"signed-by": 0}, {"signed-by": 1}]}
+      "policy": {
+        "2-of": [
+          {
+            "signed-by": 0
+          },
+          {
+            "signed-by": 1
+          }
+        ]
+      }
     },
     "context": {
       "open": "mychannel",
@@ -95,7 +127,7 @@
       "transfer": "mychannel"
     }
   },
-  "info" : {
+  "info": {
     "Version": "1.1.0",
     "Size": "4 Peers",
     "Orderer": "Solo",

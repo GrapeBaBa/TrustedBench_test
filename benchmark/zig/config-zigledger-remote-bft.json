@@ -1,0 +1,63 @@
+{
+  "blockchain": {
+    "type": "zigledger",
+    "config": "benchmark/zig/zigledger-remote.json"
+  },
+  "test": {
+    "clients": {
+      "type": "local",
+      "number": 3
+    },
+    "rounds": [
+      {
+        "label": "transfer",
+        "txNumber": [
+          2000
+        ],
+        "rateControl": [
+          {
+            "type": "fixed-rate",
+            "opts": {
+              "tps": 100
+            }
+          }
+        ],
+        "arguments": {
+          "path": "sign.json",
+          "amount": 100
+        },
+        "callback": "benchmark/zig/transfer.js"
+      }
+    ]
+  },
+  "monitor": {
+    "type": [
+      "docker",
+      "process"
+    ],
+    "docker": {
+      "name": [
+        "http://192.168.0.50:2375/orderer0.example.com",
+        "http://192.168.0.51:2375/orderer1.example.com",
+        "http://192.168.0.52:2375/orderer2.example.com",
+        "http://192.168.0.52:2375/perftbft_peer1.org2.example.com_1",
+        "http://192.168.0.53:2375/perftbft_peer1.org1.example.com_1",
+        "http://192.168.0.53:2375/orderer3.example.com",
+        "http://192.168.0.54:2375/perftbft_zigerface-mysql_1",
+        "http://192.168.0.54:2375/perftbft_zigerface-fullserver.org1_1",
+        "http://192.168.0.54:2375/perftbft_peer0.org1.example.com_1",
+        "http://192.168.0.54:2375/perftbft_ca0_1",
+        "http://192.168.0.55:2375/perftbft_peer0.org2.example.com_1",
+        "http://192.168.0.55:2375/perftbft_ca1_1"
+      ]
+    },
+    "process": [
+      {
+        "command": "node",
+        "arguments": "local-client.js",
+        "multiOutput": "avg"
+      }
+    ],
+    "interval": 1
+  }
+}

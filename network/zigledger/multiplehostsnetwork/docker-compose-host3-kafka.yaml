@@ -1,10 +1,9 @@
 version: '3.1'
 
 services:
-  kafka2:
+  ka2:
     image: zhigui/zigledger-kafka:x86_64-0.4.6
     hostname: kafka2
-    network_mode: "host"
     ports:
       - 9092:9092
       - 9093:9093

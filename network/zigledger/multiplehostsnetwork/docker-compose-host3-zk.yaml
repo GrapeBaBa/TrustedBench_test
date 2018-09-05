@@ -1,10 +1,9 @@
 version: '3.1'
 
 services:
-  zookeeper2:
+  zoo2:
     image: zhigui/zigledger-zookeeper:x86_64-0.4.6
     hostname: zookeeper2
-    network_mode: "host"
     ports:
       - 2181:2181
       - 2888:2888
