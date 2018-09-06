@@ -3,17 +3,18 @@ version: '3.1'
 services:
   peer1-org2:
     hostname: peer1.org2.example.com
+    container_name: peer1-org2
     image: zhigui/zigledger-peer:x86_64-1.2.11
     environment:
       - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-      - CORE_PEER_ID=peer1.org2.example.com
+      - CORE_PEER_ID=192.168.0.32
       - CORE_PEER_LOCALMSPID=Org2MSP
       - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer/msp/
-      - CORE_PEER_ADDRESS=peer1.org2.example.com:7051
+      - CORE_PEER_ADDRESS=0.0.0.0:7051
       - CORE_PEER_ENDORSER_ENABLED=true
       - CORE_PEER_GOSSIP_USELEADERELECTION=true
       - CORE_PEER_GOSSIP_ORGLEADER=false
-      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer1.org2.example.com:7051
+      - CORE_PEER_GOSSIP_EXTERNALENDPOINT=192.168.0.32:7051
       - CORE_PEER_TLS_ENABLED=true
       - CORE_PEER_PROFILE_ENABLED=true
       - CORE_PEER_SIMPLEFEEK=0

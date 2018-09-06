@@ -3,6 +3,7 @@ version: '3.1'
 services:
   orderer1:
     hostname: orderer1.example.com
+    container_name: orderer1
     image: zhigui/zigledger-orderer:x86_64-1.2.2
     environment:
 #      - ORDERER_GENERAL_LOGLEVEL=debug

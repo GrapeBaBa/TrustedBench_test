@@ -7,7 +7,7 @@
           "url": "grpcs://192.168.0.30:7050",
           "mspid": "OrdererMSP",
           "user": {
-            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/c25aa3879de745eac345bc9c77c52338150f3139ac216046b4483100dfa2d8e2_sk",
+            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/2428f9b87d275a733d84f7f5a136dcd96a4f772939b8f56c8a0c7a9a07049e9e_sk",
             "cert": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
           },
           "server-hostname": "orderer.example.com",
@@ -17,7 +17,7 @@
           "url": "grpcs://192.168.0.31:7050",
           "mspid": "OrdererMSP",
           "user": {
-            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/c25aa3879de745eac345bc9c77c52338150f3139ac216046b4483100dfa2d8e2_sk",
+            "key": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/2428f9b87d275a733d84f7f5a136dcd96a4f772939b8f56c8a0c7a9a07049e9e_sk",
             "cert": "network/zigledger/multiplehostsnetwork/crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem"
           },
           "server-hostname": "orderer.example.com",
@@ -28,7 +28,7 @@
         "name": "peerOrg1",
         "mspid": "Org1MSP",
         "user": {
-          "key": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/a48bd547bd2a822ba58b33bc4948020a43642782e5480e61be394077a0615287_sk",
+          "key": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/67e2307dd30a3b23a034d1aa85830f31bceaee0a3222847ee18e6e6d88d0aed4_sk",
           "cert": "network/zigledger/multiplehostsnetwork/crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem"
         },
         "ca": {
