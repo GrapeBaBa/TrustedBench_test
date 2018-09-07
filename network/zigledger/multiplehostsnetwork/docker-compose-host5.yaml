@@ -4,18 +4,19 @@ services:
   peer0-org1:
     hostname: peer0.org1.example.com
     container_name: peer0-org1
-    image: zhigui/zigledger-peer:x86_64-1.2.11
+    image: zhigui/zigledger-peer:x86_64-1.2.12
+    network_mode: "host"
     environment:
      - CORE_VM_ENDPOINT=unix:///host/var/run/docker.sock
-     - CORE_PEER_ID=192.168.0.34
+     - CORE_PEER_ID=peer0.org1.example.com
 #      - CORE_LOGGING_PEER=debug
      - CORE_PEER_ENDORSER_ENABLED=true
      - CORE_PEER_LOCALMSPID=Org1MSP
      - CORE_PEER_MSPCONFIGPATH=/etc/hyperledger/msp/peer/msp/
-     - CORE_PEER_ADDRESS=0.0.0.0:7051
+     - CORE_PEER_ADDRESS=peer0.org1.example.com:7051
      - CORE_PEER_GOSSIP_USELEADERELECTION=true
      - CORE_PEER_GOSSIP_ORGLEADER=false
-     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=192.168.0.34:7051
+     - CORE_PEER_GOSSIP_EXTERNALENDPOINT=peer0.org1.example.com:7051
      - CORE_PEER_TLS_ENABLED=true
      - CORE_PEER_PROFILE_ENABLED=true
      - CORE_PEER_SIMPLEFEEK=0
@@ -39,6 +40,7 @@ services:
     image: zhigui/zigledger-ca:x86_64-1.1.1
     hostname: ca0
     container_name: ca-org1
+    network_mode: "host"
     environment:
       - ZIGLEDGER_CA_HOME=/etc/hyperledger/fabric-ca-server
       - ZIGLEDGER_CA_SERVER_CA_NAME=ca-org1

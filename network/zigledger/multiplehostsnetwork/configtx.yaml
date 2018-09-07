@@ -75,7 +75,7 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: 192.168.0.34
+            - Host: peer0.org1.example.com
               Port: 7051
 
     - &Org2
@@ -92,7 +92,7 @@ Organizations:
             # AnchorPeers defines the location of peers which can be used
             # for cross org gossip communication.  Note, this value is only
             # encoded in the genesis block in the Application section context
-            - Host: 192.168.0.35
+            - Host: peer0.org2.example.com
               Port: 7051
 
 ################################################################################
@@ -110,8 +110,8 @@ Orderer: &OrdererDefaults
     OrdererType: kafka
 
     Addresses:
-        - 192.168.0.30:7050
-        - 192.168.0.31:7050
+        - orderer0.example.com:7050
+        - orderer1.example.com:7050
 
     # Batch Timeout: The amount of time to wait before creating a batch
     BatchTimeout: 1s
@@ -136,10 +136,10 @@ Orderer: &OrdererDefaults
         # this list to identify the brokers of the ordering service.
         # NOTE: Use IP:port notation.
         Brokers:
-            - 192.168.0.30:9092
-            - 192.168.0.31:9092
-            - 192.168.0.32:9092
-            - 192.168.0.33:9092
+            - kafka0:9092
+            - kafka1:9092
+            - kafka2:9092
+            - kafka3:9092
 
     # Organizations is the list of orgs which are defined as participants on
     # the orderer side of the network

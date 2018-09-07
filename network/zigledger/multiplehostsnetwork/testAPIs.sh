@@ -8,7 +8,7 @@
 echo
 echo "POST request Create channel"
 curl -s -X POST \
-  http://192.168.0.34:8081/create-channel \
+  http://192.168.0.81:8081/create-channel \
   -H "content-type: application/json" \
   -d '{
 	"channelName":"mychannel",
@@ -19,7 +19,7 @@ sleep 3
 echo
 echo "POST request Join channel on Org1"
 curl -s -X POST \
-  http://192.168.0.34:8081/join-channel \
+  http://192.168.0.81:8081/join-channel \
   -H "content-type: application/json" \
   -d '{
 	"channelName":"mychannel",
@@ -30,7 +30,7 @@ curl -s -X POST \
 echo
 echo "POST request Join channel on Org2"
 curl -s -X POST \
-  http://192.168.0.34:8081/join-channel \
+  http://192.168.0.81:8081/join-channel \
   -H "content-type: application/json" \
   -d '{
 	"channelName":"mychannel",
@@ -41,7 +41,7 @@ curl -s -X POST \
 echo
 echo "POST request Install chaincode on Org1"
 curl -s -X POST \
-  http://192.168.0.34:8081/install-cc \
+  http://192.168.0.81:8081/install-cc \
   -H "content-type: application/json" \
   -d '{
   	"org":"org1",
@@ -54,7 +54,7 @@ curl -s -X POST \
 echo
 echo "POST request Install chaincode on Org2"
 curl -s -X POST \
-  http://192.168.0.34:8081/install-cc \
+  http://192.168.0.81:8081/install-cc \
   -H "content-type: application/json" \
   -d '{
   	"org":"org2",
@@ -67,7 +67,7 @@ curl -s -X POST \
 echo
 echo "POST request Instantiate chaincode on endorse peers"
 curl -s -X POST \
-  http://192.168.0.34:8081/instantiate-cc \
+  http://192.168.0.81:8081/instantiate-cc \
   -H "content-type: application/json" \
   -d '{
 	"chaincodeName":"token",
@@ -80,7 +80,7 @@ curl -s -X POST \
 echo
 echo "POST request Issue token"
 curl -s -X POST \
-  http://192.168.0.34:8081/issue-token \
+  http://192.168.0.81:8081/issue-token \
   -H "content-type: application/json" \
   -d '{
 	"coin_name":"ZIG",
