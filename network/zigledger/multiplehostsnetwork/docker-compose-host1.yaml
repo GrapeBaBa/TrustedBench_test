@@ -7,7 +7,7 @@ services:
     network_mode: "host"
     image: zhigui/zigledger-orderer:x86_64-1.2.12
     environment:
-      - ORDERER_GENERAL_LOGLEVEL=WARN
+      - ORDERER_GENERAL_LOGLEVEL=WARNING
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
       - ORDERER_GENERAL_GENESISMETHOD=file
       - ORDERER_GENERAL_GENESISFILE=/etc/zhigui/configtx/twoorgs.genesis.block
@@ -17,12 +17,12 @@ services:
       - ORDERER_GENERAL_PROFILE_ENABLED=true
       - ORDERER_GENERAL_TLS_PRIVATEKEY=/etc/zhigui/msp/orderer/tls/server.key
       - ORDERER_GENERAL_TLS_CERTIFICATE=/etc/zhigui/msp/orderer/tls/server.crt
-      - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/zhigui/msp/orderer/tls/ca.crt, /etc/zhigui/msp/peerOrg1/tls/ca.crt, /etc/zhigui/msp/peerOrg2/tls/ca.crt]
+      - ORDERER_GENERAL_TLS_ROOTCAS=[/etc/zhigui/msp/orderer/tls/ca.crt]
       - GODEBUG=netdns=go
       - ORDERER_KAFKA_RETRY_SHORTINTERVAL=1s
       - ORDERER_KAFKA_RETRY_SHORTTOTAL=30s
       - ORDERER_KAFKA_VERBOSE=true
-    working_dir: /opt/gopath/src/github.com/zhigui/zigledger/orderer
+    working_dir: /opt/gopath/src/github.com/zhigui/zigledger
     command: orderer
     ports:
       - 7050:7050
@@ -30,5 +30,3 @@ services:
     volumes:
         - ./:/etc/zhigui/configtx
         - ./crypto-config/ordererOrganizations/example.com/orderers/orderer0.example.com/:/etc/zhigui/msp/orderer
-        - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/zhigui/msp/peerOrg1
-        - ./crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/:/etc/zhigui/msp/peerOrg2

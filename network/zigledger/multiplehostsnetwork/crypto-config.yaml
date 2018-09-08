@@ -19,9 +19,6 @@ OrdererOrgs:
 #      - Hostname: orderer
     Template:
       Count: 2
-      SANS:
-        - "192.168.0.77"
-        - "192.168.0.78"
 
 # ---------------------------------------------------------------------------
 # "PeerOrgs" - Definition of organizations managing peer nodes
@@ -68,9 +65,6 @@ PeerOrgs:
     # ---------------------------------------------------------------------------
     Template:
       Count: 2
-      SANS:
-        - "192.168.0.81"
-        - "192.168.0.80"
       # Start: 5
       # Hostname: {{.Prefix}}{{.Index}} # default
     # ---------------------------------------------------------------------------
@@ -88,8 +82,5 @@ PeerOrgs:
     EnableNodeOUs: true
     Template:
       Count: 2
-      SANS:
-        - "192.168.0.82"
-        - "192.168.0.79"
     Users:
       Count: 1
